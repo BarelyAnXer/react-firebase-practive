@@ -1,14 +1,15 @@
-import firebase from "firebase/app";
-import "firebase/auth"
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 
+// require('dotenv').config()
 
 const app = firebase.initializeApp({
-    apiKey: process.env.apiKey,
-    authDomain: process.env.authDomain,
-    projectId: process.env.projectId,
-    storageBucket: process.env.storageBucket,
-    messagingSenderId: process.env.messagingSenderId,
-    appId: process.env.appId,
+    apiKey: "AIzaSyD_xmVbEwYsDJNDHQLsP_H5nUqb3HB9FpA",
+    authDomain: "react-firebase-auth-769eb.firebaseapp.com",
+    projectId: "react-firebase-auth-769eb",
+    storageBucket: "react-firebase-auth-769eb.appspot.com",
+    messagingSenderId: "547237710411",
+    appId: "1:547237710411:web:301e66ea7fa300d39b9bce"
 })
 
 export const auth = app.auth()
