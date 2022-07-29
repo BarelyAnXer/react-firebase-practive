@@ -1,14 +1,16 @@
 import React, {useRef, useState} from 'react';
 import {Form, Button, Card, Alert} from "react-bootstrap"
 import {useAuth} from "../contexts/AuthContext";
-
+import {Link, useNavigate} from "react-router-dom";
 
 function Login() {
     const emailRef = useRef()
     const passwordRef = useRef()
-    const {signUp, currentUser} = useAuth()
+    const {login, currentUser} = useAuth()
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
+
+    const navigate = useNavigate()
 
     async function handleSubmit(event) {
         event.preventDefault()
@@ -16,12 +18,13 @@ function Login() {
         try {
             setError("")
             setLoading(true)
-            await signUp(emailRef.current.value, passwordRef.current.value)
+            await login(emailRef.current.value, passwordRef.current.value)
+            navigate("/")
         } catch (error) {
             console.log(error)
-            setError("Failed to create Account")
+            setError("Failed to login")
         }
-        setLoading(false)
+        setLoading(false);
     }
 
 
@@ -30,7 +33,8 @@ function Login() {
             <Card>
                 <h2 className="text-center mb-4">Login</h2>
                 {error && <Alert variant={"danger"}>{error}</Alert>}
-                {currentUser.email}
+                {/*{currentUser && <Alert variant={"primary"}>{use}</Alert>}*/}
+
                 <Form onSubmit={handleSubmit}>
                     <Form.Group id="email">
                         <Form.Label>Email</Form.Label>
@@ -51,7 +55,7 @@ function Login() {
             </Card>
 
             <div className="w-100 text-center mt-2">
-                Already have and account ? Log In
+                Need an Account? <Link to={"/signup"}>Signup</Link>
             </div>
 
         </>

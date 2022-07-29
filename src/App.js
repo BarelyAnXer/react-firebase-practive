@@ -22,8 +22,9 @@ function App() {
                                        element={<Dashboard/>}/>
                                 <Route path="/signup"
                                        element={<Signup/>}/>
-                                <Route path="/signup"
+                                <Route path="/login"
                                        element={<Login/>}/>
+                                {/*<Route path="*" element={<Navigate to="/" replace />} />*/}
                             </Routes>
 
                         </div>
