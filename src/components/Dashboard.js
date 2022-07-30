@@ -27,7 +27,7 @@ export function Dashboard() {
                 {error && <Alert variant={"danger"}>{error}</Alert>}
                 <strong>{currentUser.email}</strong>
                 <Link className={"btn btn-primary w-100 mt-3"}
-                      to={"updateProfile"}>Update Profile</Link>
+                      to={"/update-profile"}>Update Profile</Link>
             </Card.Body>
 
             <div className="w-100 text-center mt-2">

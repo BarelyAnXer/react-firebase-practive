@@ -6,6 +6,7 @@ import {Dashboard} from "./components/Dashboard";
 import Login from "./components/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import ForgotPassword from "./components/ForgotPassword";
+import UpdateProfile from "./components/UpdateProfile";
 
 function App() {
     return (
@@ -30,6 +31,10 @@ function App() {
                                        element={<Login/>}/>
                                 <Route path="/forgot-password"
                                        element={<ForgotPassword/>}/>
+                                <Route path="/update-profile"
+                                       element={<PrivateRoute>
+                                           <UpdateProfile/>
+                                       </PrivateRoute>}/>
                                 {/*<Route path="*" element={<Navigate to="/" replace />} />*/}
                             </Routes>
 
