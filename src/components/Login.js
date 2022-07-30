@@ -54,6 +54,10 @@ function Login() {
                 </Form>
             </Card>
 
+            <div className="w-100 text-center mt-3">
+                <Link to={"/forgot-password"}>Forgot Password?</Link>
+            </div>
+
             <div className="w-100 text-center mt-2">
                 Need an Account? <Link to={"/signup"}>Signup</Link>
             </div>

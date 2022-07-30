@@ -36,7 +36,7 @@ function Signup() {
             <Card>
                 <h2 className="text-center mb-4">Sign Up</h2>
                 {error && <Alert variant={"danger"}>{error}</Alert>}
-                {currentUser.email}
+                {currentUser && currentUser.email}
                 <Form onSubmit={handleSubmit}>
                     <Form.Group id="email">
                         <Form.Label>Email</Form.Label>

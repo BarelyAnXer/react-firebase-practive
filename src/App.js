@@ -4,6 +4,8 @@ import {AuthProvider} from "./contexts/AuthContext";
 import {BrowserRouter, Route, Routes,} from "react-router-dom"
 import {Dashboard} from "./components/Dashboard";
 import Login from "./components/Login";
+import PrivateRoute from "./components/PrivateRoute";
+import ForgotPassword from "./components/ForgotPassword";
 
 function App() {
     return (
@@ -19,11 +21,15 @@ function App() {
 
                             <Routes>
                                 <Route path="/"
-                                       element={<Dashboard/>}/>
+                                       element={<PrivateRoute>
+                                           <Dashboard/>
+                                       </PrivateRoute>}/>
                                 <Route path="/signup"
                                        element={<Signup/>}/>
                                 <Route path="/login"
                                        element={<Login/>}/>
+                                <Route path="/forgot-password"
+                                       element={<ForgotPassword/>}/>
                                 {/*<Route path="*" element={<Navigate to="/" replace />} />*/}
                             </Routes>
 

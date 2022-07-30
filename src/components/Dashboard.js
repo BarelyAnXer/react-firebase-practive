@@ -18,8 +18,6 @@ export function Dashboard() {
         } catch (error) {
             setError("Failed to Logout")
         }
-
-
     };
 
     return <>
